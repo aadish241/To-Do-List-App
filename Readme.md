@@ -1,18 +1,34 @@
-✅ To-Do List App
-A simple and clean To-Do List web application built with Spring Boot and Thymeleaf, backed by a MySQL database.
+# ✅ To-Do List App
 
-🚀 Features
+A simple and clean To-Do List web application built with **Spring Boot** and **Thymeleaf**, backed by a **MySQL** database.
 
-Add new tasks
-Mark tasks as completed / uncompleted
-Delete tasks
-Clean and responsive UI with Bootstrap 5
+---
 
+## 🚀 Features
 
-🛠️ Tech Stack
-LayerTechnologyBackendJava 17, Spring Boot 4FrontendThymeleaf, HTML, CSSStylingBootstrap 5, Bootstrap IconsDatabaseMySQLORMHibernate / Spring Data JPABuild ToolMaven
+- Add new tasks
+- Mark tasks as completed / uncompleted
+- Delete tasks
+- Clean and responsive UI with Bootstrap 5
 
-📁 Project Structure
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Backend | Java 17, Spring Boot 4 |
+| Frontend | Thymeleaf, HTML, CSS |
+| Styling | Bootstrap 5, Bootstrap Icons |
+| Database | MySQL |
+| ORM | Hibernate / Spring Data JPA |
+| Build Tool | Maven |
+
+---
+
+## 📁 Project Structure
+
+```
 src/
 ├── main/
 │   ├── java/com/todolistapp/
@@ -27,53 +43,87 @@ src/
 │       │   └── index.html            # Thymeleaf template
 │       ├── static/
 │       │   └── style.css             # Custom styles
-│       └── application.properties   # App configuration
+│       ├── application.properties          # Local config (gitignored)
+│       └── application.properties.example  # Template for configuration
+```
 
-⚙️ Getting Started
-Prerequisites
+---
 
-Java 17+
-Maven
-MySQL
+## ⚙️ Getting Started
 
-Setup
+### Prerequisites
+- Java 17+
+- Maven
+- MySQL
 
-Clone the repository
+### Setup
 
-bashgit clone https://github.com/aadish241/To-Do-List-App.git
+1. **Clone the repository**
+```bash
+git clone https://github.com/aadish241/To-Do-List-App.git
 cd To-Do-List-App
+```
 
-Create the database
+2. **Create the database**
+```sql
+CREATE DATABASE todolistdb;
+```
 
-sqlCREATE DATABASE todolistdb;
+3. **Configure `application.properties`**
 
-Configure application.properties
+> ⚠️ `application.properties` is not included in this repo for security reasons. A template is provided instead.
 
-propertiesspring.datasource.url=jdbc:mysql://localhost:3306/todolistdb
+Copy the example file and fill in your own values:
+```bash
+cp src/main/resources/application.properties.example src/main/resources/application.properties
+```
+
+Then edit `application.properties` with your credentials:
+```properties
+spring.application.name=To-Do-List-App
+spring.datasource.url=jdbc:mysql://localhost:3306/todolistdb
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
 
-Run the app
+4. **Run the app**
+```bash
+mvn spring-boot:run
+```
 
-bashmvn spring-boot:run
-
-Open in browser
-
+5. **Open in browser**
+```
 http://localhost:8080
+```
+
+---
 
 
-📌 API Endpoints
-MethodEndpointDescriptionGET/Show all todosPOST/addAdd a new todoGET/update/{id}Toggle todo completionGET/delete/{id}Delete a todo
+---
 
-🧠 What I Learned
+## 📌 API Endpoints
 
-Spring Boot MVC architecture
-Thymeleaf templating engine
-Spring Data JPA & Hibernate
-Connecting Spring Boot to MySQL
-Git & GitHub workflow
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Show all todos |
+| POST | `/add` | Add a new todo |
+| GET | `/update/{id}` | Toggle todo completion |
+| GET | `/delete/{id}` | Delete a todo |
 
+---
 
-👨‍💻 Author
-Aadish — @aadish241
+## 🧠 What I Learned
+
+- Spring Boot MVC architecture
+- Thymeleaf templating engine
+- Spring Data JPA & Hibernate
+- Connecting Spring Boot to MySQL
+- Git & GitHub workflow
+
+---
+
+## 👨‍💻 Author
+
+**Aadish** — [@aadish241](https://github.com/aadish241)
